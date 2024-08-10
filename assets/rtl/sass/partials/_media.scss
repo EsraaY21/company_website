@@ -1,0 +1,21 @@
+/*-========= media style  ==========-*/
+.media {
+  -webkit-box-display: flex;
+  -ms-flexbox-display: flex;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.media-body {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.media-body {
+  h5 {
+    a {
+      text-decoration: none;
+    }
+  }
+}

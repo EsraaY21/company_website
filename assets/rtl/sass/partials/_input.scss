@@ -1,0 +1,55 @@
+/*====== Custom-cotrol  ========*/
+.custom-control {
+  display: block;
+  min-height: 1.5rem;
+  padding-right: 1.5em;
+  margin-bottom: 0.125rem;
+
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+    box-sizing: border-box;
+  }
+  .custom-control-input {
+    margin-right: -1.5em;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.4em;
+    vertical-align: top;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    float: right;
+    border: 1px solid #adb5bd;
+    border-radius: 4px;
+  }
+}
+/*====== CheckBox  ========*/
+.custom-checkbox {
+  .custom-control-input {
+    &:checked {
+      background-image: url("../images/after-right.svg");
+      background-color: $theme-color-2;
+      border-color: $theme-color-2;
+    }
+  }
+}
+/*====== Radio  ========*/
+.custom-radio {
+  .custom-control-input {
+    border-radius: 50%;
+    &:checked {
+      background-image: url("../images/after-dot.svg");
+      background-color: $theme-color-2;
+      border-color: $theme-color-2;
+    }
+  }
+}
+.top-bottom-left-radius-5 {
+  border-top-right-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
+}
