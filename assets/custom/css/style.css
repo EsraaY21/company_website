@@ -1,5 +1,7 @@
 :root {
     --custom_color_main: #5079f7;
+    --custom_main_bg: #f7f9ff;
+    --custom_text_color:#181818cc;
 }
 
 /* Header ********************************** */
@@ -12,10 +14,10 @@
     max-height: 4rem !important;
 }
 
-.header-menu-area .main-menu-content {
+/* .header-menu-area .main-menu-content {
     padding-top: .625rem;
     padding-bottom: .625rem;
-}
+} */
 
 .header-menu-area .main-menu > ul > li
 {
@@ -43,4 +45,26 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+}
+
+
+/* Hero ********************************** */
+
+.hero-bg-5
+{
+    background-color: var(--custom_main_bg);
+}
+
+.hero-slider-item:after
+{
+    background-color: transparent;
+}
+
+.hero-bg-5 img{
+    max-width: 100%;
+}
+
+.hero-bg-5 .row 
+{
+    align-items: center;
 }
