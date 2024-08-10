@@ -1,5 +1,46 @@
+:root {
+    --custom_color_main: #5079f7;
+}
+
 /* Header ********************************** */
-.header-menu-area .logo img
-{
+
+.header-menu-area {
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+}
+
+.header-menu-area .logo img {
     max-height: 4rem !important;
+}
+
+.header-menu-area .main-menu-content {
+    padding-top: .625rem;
+    padding-bottom: .625rem;
+}
+
+.header-menu-area .main-menu > ul > li
+{
+    margin: 0;
+    padding-right: 0.825rem;
+    padding-left: 0.825rem;
+}
+
+.active {
+    color: var(--custom_color_main) !important;
+}
+
+.custom-select {
+    display: inline-block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem 1.75rem .375rem .75rem;
+    line-height: 1.5;
+    color: #495057;
+    vertical-align: middle;
+    background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center;
+    background-size: 8px 10px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
