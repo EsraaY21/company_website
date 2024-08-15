@@ -96,3 +96,10 @@ h1,h2,h3,h4,p
 .services.feature-area i{
     color: white;
 }
+
+/* Services ********************************** */
+.member-card .card-image .card-img-top
+{
+    width: 100px;
+    height: 100px;
+}
