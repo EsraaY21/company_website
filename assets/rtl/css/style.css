@@ -6833,7 +6833,6 @@ input[type=tel] {
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-  padding-bottom: 33px;
 }
 .main-menu > ul > li a:hover {
   color: #5079f7;

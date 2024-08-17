@@ -6,6 +6,11 @@
     --custom_green:#16878c;
 }
 
+.services
+{
+    background-color: var(--custom_main_bg);
+}
+
 h1,h2,h3,h4,p
 {
     font-family: sans-serif !important;
@@ -28,8 +33,9 @@ h1,h2,h3,h4,p
     padding-left: 0.825rem;
 }
 
-.active {
+.nav-link.active {
     color: var(--custom_color_main) !important;
+    font-weight: bold;
 }
 
 .custom-select {
@@ -191,3 +197,4 @@ footer {
     background-color: #0d1e67;
     border-bottom: 1px solid #59597e;
 }
+
