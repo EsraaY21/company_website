@@ -9,7 +9,7 @@ var chart = new Chart( ctx, {
     data: {
         datasets: [ {
             data: [ 40, 32, 15 ],
-            backgroundColor: ["#7E3CF9", "#F68A03", "#358FF7"],
+            backgroundColor: ["#7E3CF9", "#16878c", "#358FF7"],
             hoverBorderWidth: 5,
             hoverBorderColor: "#eee",
             borderWidth: 3

@@ -1,7 +1,9 @@
 :root {
     --custom_color_main: #5079f7;
+    --custom_color_main_dark: #005597;
     --custom_main_bg: #f7f9ff;
     --custom_text_color:#181818cc;
+    --custom_green:#16878c;
 }
 
 h1,h2,h3,h4,p
@@ -97,9 +99,95 @@ h1,h2,h3,h4,p
     color: white;
 }
 
-/* Services ********************************** */
+/* Team ********************************** */
 .member-card .card-image .card-img-top
 {
     width: 100px;
     height: 100px;
+}
+
+/* Blog ********************************** */
+.card-text
+{
+    color: var(--custom_text_color);
+}
+
+
+/* Footer ********************************** */
+footer
+{
+    background-color:   #0d1e67;
+    color: white;
+}
+
+footer h3
+{
+    color: white;
+}
+
+footer img{
+    max-height: 70px;
+    margin-bottom: 0.5rem;
+}
+
+footer h3
+{
+    margin-bottom: 0.5em;
+}
+
+
+li {
+    list-style: none;
+}
+
+footer .wrapper ol li {
+    display: inline-block;
+    width: 100%;
+    margin: .625rem 0;
+    position: relative;
+    font-size: 1rem;
+    color: #fff;
+    padding-right: .9375rem;
+}
+
+footer .wrapper ol li::before {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: .625rem;
+    height: .5rem;
+    width: .5rem;
+    background: #5079f7;
+    border-radius: 50%;
+}
+
+
+footer .last-link li
+{
+    margin: .625rem 0;
+}
+
+.copy-right {
+    background-color: #0d1e67;
+    padding: .625rem 0;
+    position: relative;
+}
+
+.copy-right .wrapper .content ol li {
+    display: inline-block;
+    margin: .3125rem .625rem;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.copy-right .wrapper .content span {
+    font-size: 1rem;
+    color: #fff;
+}
+
+footer {
+    padding: 3rem 0;
+    position: relative;
+    background-color: #0d1e67;
+    border-bottom: 1px solid #59597e;
 }

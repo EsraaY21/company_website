@@ -459,7 +459,7 @@ body {
 }
 
 .bg-3 {
-  background-color: #f68a03 !important;
+  background-color: #16878c !important;
 }
 
 .bg-4 {
@@ -510,7 +510,7 @@ body {
 }
 
 .text-color-3 {
-  color: #f68a03 !important;
+  color: #16878c !important;
 }
 
 .text-color-4 {
@@ -546,7 +546,7 @@ body {
 }
 
 .svg-icon-color-2 path {
-  fill: #f68a03;
+  fill: #16878c;
 }
 
 .svg-icon-color-3 path {
@@ -1539,7 +1539,7 @@ body {
   padding-left: 8px;
   line-height: 22px;
   background-color: rgba(246, 138, 3, 0.1);
-  color: #f68a03;
+  color: #16878c;
   font-size: 11px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -1769,7 +1769,7 @@ a {
 
 /*========= review-stars =========*/
 .review-stars span {
-  color: #f68a03;
+  color: #16878c;
   margin-left: -3px;
 }
 .review-stars span.rating-number {
@@ -2448,7 +2448,7 @@ div.datedropper .picker .pick-lg-b li {
   font-size: 16px;
 }
 .theme-btn:hover {
-  background-color: #ef6767;
+  background-color: #005597;;
   color: #fff;
 }
 .theme-btn:hover .icon {
@@ -2800,7 +2800,7 @@ div.datedropper .picker .pick-lg-b li {
   background-color: #7e3cf9;
 }
 .info--box-2.border-yellow::after {
-  background-color: #f68a03;
+  background-color: #16878c;
 }
 .info--box-2.border-blue::after {
   background-color: #358ff7;
@@ -3026,7 +3026,7 @@ div.datedropper .picker .pick-lg-b li {
 }
 
 .stats-average__count {
-  color: #f68a03;
+  color: #16878c;
   font-size: 65px;
   font-weight: 700;
 }
@@ -3098,7 +3098,7 @@ div.datedropper .picker .pick-lg-b li {
   display: none;
 }
 .leave-rating input:checked ~ label::before {
-  color: #f68a03;
+  color: #16878c;
 }
 .leave-rating input:nth-of-type(5):checked ~ .rating-result-text::before {
   content: "Awful!";
@@ -3131,10 +3131,10 @@ div.datedropper .picker .pick-lg-b li {
   font-weight: 900;
 }
 .leave-rating label:hover ~ label::before {
-  color: #f68a03;
+  color: #16878c;
 }
 .leave-rating label:hover::before {
-  color: #f68a03;
+  color: #16878c;
 }
 .leave-rating label:nth-of-type(5):hover ~ .rating-result-text::before {
   content: "Awful!";
@@ -5957,7 +5957,7 @@ textarea {
 
 /*======= course-badge =======*/
 .course-badge {
-  background-color: #f68a03;
+  background-color: #16878c;
   color: #fff;
   font-weight: 700;
   display: inline-block;
