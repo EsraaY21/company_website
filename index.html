@@ -13,16 +13,11 @@
   <link rel="icon" sizes="16x16" href="assets/custom/images/logo.png" />
 
   <!-- inject:css -->
-  <link rel="stylesheet" href="assets/rtl/css/bootstrap-rtl.min.css" />
-  <link rel="stylesheet" href="assets/rtl/css/line-awesome.css" />
-  <link rel="stylesheet" href="assets/rtl/css/owl.carousel.min.css" />
-  <link rel="stylesheet" href="assets/rtl/css/owl.theme.default.min.css" />
-  <link rel="stylesheet" href="assets/rtl/css/select2.min.css" />
-  <link rel="stylesheet" href="assets/rtl/css/fancybox.css" />
-  <link rel="stylesheet" href="assets/rtl/css/tooltipster.bundle.css" />
-  <link rel="stylesheet" href="assets/rtl/css/animated-headline.css" />
-  <link rel="stylesheet" href="assets/rtl/css/style.css" />
+   <!-- For RTL -->
+<link rel="stylesheet" href="assets/rtl/css/rtl.css" />
 
+<!-- For LTR -->
+<link rel="stylesheet" href="assets/ltr/css/ltr.css" />
 
   <link rel="stylesheet" href="assets/custom/css/style.css" />
   <link rel="stylesheet" href="assets/custom/fontawesome/css/all.min.css">
@@ -59,7 +54,7 @@
                     <li><a href="#services" class="nav-link" data-translate="services"></a></li>
                     <li><a href="#blog" class="nav-link" data-translate="blog"></a></li>
                     <li><a href="#contact" class="nav-link" data-translate="contact_us"> </a></li>
-                    <li>
+                    <!-- <li>
                       <div class="custom-select-wrapper">
                         <select class="custom-select" id="language_switcher" aria-label="Language Switcher">
                           <option value="ar">Ar</option>
@@ -67,7 +62,7 @@
                         </select>
                       </div>
 
-                    </li>
+                    </li> -->
 
                   </ul>
 
@@ -82,7 +77,13 @@
               <div class="nav-right-button border-right border-right-gray ps-4 me-3">
                 <ul class="generic-list-item">
                   <li>
-                    <a href="sign-up.html" class="btn theme-btn theme-btn-sm text-white"> Client Area</a>
+                    <div class="custom-select-wrapper">
+                      <select class="custom-select" id="language_switcher" aria-label="Language Switcher">
+                        <option value="ar">Ar</option>
+                        <option value="en">En</option>
+                      </select>
+                    </div>
+
                   </li>
                 </ul>
               </div>
