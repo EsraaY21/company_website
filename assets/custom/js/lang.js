@@ -1,75 +1,90 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Retrieve the selected language from localStorage, default to 'en'
-    var selectedLanguage = localStorage.getItem('lang') || 'en';
-    
-    // Load the appropriate stylesheet based on the selected language
-    if (selectedLanguage !== 'en') {
-        var rtlStylesheet = document.createElement('link');
-        rtlStylesheet.rel = 'stylesheet';
-        rtlStylesheet.href = 'assets/custom/css/rtl.css';
-        document.head.appendChild(rtlStylesheet);
+document.addEventListener('DOMContentLoaded', function () {
+    var selectedLanguage = localStorage.getItem('lang') || 'ar';
+    setLanguageAttributes(selectedLanguage);
+    loadLanguageFiles(selectedLanguage);
+    initializeLanguageSwitcher(selectedLanguage);
+});
 
-        // Set HTML attributes for RTL
-        document.documentElement.lang = 'ar';
-        document.documentElement.dir = 'rtl';
-        
-        // Remove 'lang' parameter from the URL if present
-        var currentUrl = new URL(window.location.href);
-        if (currentUrl.searchParams.has('lang')) {
-            currentUrl.searchParams.delete('lang');
-            window.history.replaceState({}, '', currentUrl.toString());
-        }
+function setLanguageAttributes(lang) {
+    var isRTL = lang !== 'en';
+    document.documentElement.lang = isRTL ? 'ar' : 'en';
+    document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+
+    var stylesheetLink = document.createElement('link');
+    stylesheetLink.rel = 'stylesheet';
+    stylesheetLink.href = isRTL ? 'assets/rtl/css/rtl.css' : 'assets/ltr/css/ltr.css';
+    document.head.appendChild(stylesheetLink);
+
+    var currentUrl = new URL(window.location.href);
+    if (isRTL) {
+        currentUrl.searchParams.delete('lang');
     } else {
-        // Set HTML attributes for LTR
-        document.documentElement.lang = 'en';
-        document.documentElement.dir = 'ltr';
-
-        // Add 'lang=en' to the URL if not already present
-        var currentUrl = new URL(window.location.href);
-        if (!currentUrl.searchParams.has('lang')) {
-            currentUrl.searchParams.set('lang', 'en');
-            window.history.replaceState({}, '', currentUrl.toString());
-        }
+        currentUrl.searchParams.set('lang', 'en');
     }
+    window.history.replaceState({}, '', currentUrl.toString());
 
-    // Load translation file based on the selected language
-    var translationFile = 'translations/' + selectedLanguage + '.json';
+    loadScripts(isRTL);
+}
+
+function loadLanguageFiles(lang) {
+    var translationFile = 'translations/' + lang + '.json';
     fetch(translationFile)
         .then(response => response.json())
         .then(translations => {
-            // Update text content based on translations
-            var elements = document.querySelectorAll('[data-translate]');
-            elements.forEach(function(element) {
-                var key = element.getAttribute('data-translate');
-                if (translations[key]) {
-                    element.textContent = translations[key];
-                }
-            });
-
-            // Update typewriter text if applicable
-            var typewriteElement = document.querySelector('.typewrite');
-            if (typewriteElement) {
-                var dataType = JSON.parse(typewriteElement.getAttribute('data-type'));
-                typewriteElement.setAttribute('data-type', JSON.stringify(dataType.map(key => translations[key] || key)));
-            }
+            updateTextContent(translations);
         });
+}
 
-    // Language switcher
-    document.getElementById('language_switcher').addEventListener('change', function() {
-        var selectedLanguage = this.value;
-        localStorage.setItem('lang', selectedLanguage);
-        var currentUrl = new URL(window.location.href);
-
-        if (selectedLanguage === 'en') {
-            currentUrl.searchParams.set('lang', 'en');
-            window.location.href = currentUrl.toString();
-        } else {
-            currentUrl.searchParams.delete('lang');
-            window.location.href = currentUrl.toString();
+function updateTextContent(translations) {
+    var elements = document.querySelectorAll('[data-translate]');
+    elements.forEach(function (element) {
+        var key = element.getAttribute('data-translate');
+        if (translations[key]) {
+            element.textContent = translations[key];
         }
     });
+}
 
-    // Set the selected option based on the current localStorage value
+function initializeLanguageSwitcher(currentLanguage) {
     var languageSwitcher = document.getElementById('language_switcher');
-    languageSwitcher.value = selectedLanguage;
-});
+    languageSwitcher.value = currentLanguage;
+
+    languageSwitcher.addEventListener('change', function () {
+        var selectedLanguage = this.value;
+        localStorage.setItem('lang', selectedLanguage);
+        
+        // Reload the page immediately with the new language set
+        var currentUrl = new URL(window.location.href);
+        if (selectedLanguage === 'en') {
+            currentUrl.searchParams.set('lang', 'en');
+        } else {
+            currentUrl.searchParams.delete('lang');
+        }
+        window.location.href = currentUrl.toString(); // Use href to force page reload
+    });
+}
+
+function loadScripts(isRTL) {
+    var scriptFiles = [
+        'jquery-3.7.1.min.js',
+        'bootstrap.bundle.min.js',
+        'select2.min.js',
+        'owl.carousel.min.js',
+        'isotope.js',
+        'waypoint.min.js',
+        'jquery.counterup.min.js',
+        'fancybox.js',
+        'jquery.lazy.min.js',
+        'datedropper.min.js',
+        'emojionearea.min.js',
+        'tooltipster.bundle.min.js',
+        isRTL ? 'main-rtl.js' : 'main.js'
+    ];
+
+    scriptFiles.forEach(function (scriptFile) {
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'assets/' + (isRTL ? 'rtl' : 'ltr') + '/js/' + scriptFile;
+        scriptElement.async = false; // Ensure scripts load in order
+        document.body.appendChild(scriptElement);
+    });
+}
