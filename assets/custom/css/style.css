@@ -8,7 +8,7 @@
 
 .services
 {
-    background-color: var(--custom_main_bg);
+    background-color:#f7f9ff;
 }
 
 h1,h2,h3,h4,p
@@ -56,11 +56,29 @@ h1,h2,h3,h4,p
 }
 
 
+/* Hide the off-canvas menu and overlay by default */
+.off-canvas-menu, .body-overlay {
+    display: none;
+}
+
+/* Display the off-canvas menu and overlay only on small screens */
+@media (max-width: 768px) {
+    .off-canvas-menu, .body-overlay {
+        display: block;
+    }
+}
+
+/* Optionally, hide the overlay and off-canvas menu when they are not active */
+.off-canvas-menu.hidden, .body-overlay.hidden {
+    display: none;
+}
+
+
 /* Hero ********************************** */
 
 .hero-bg-5
 {
-    background-color: var(--custom_main_bg);
+    background-color: #f7f9ff;
 }
 
 .hero-slider-item:after
